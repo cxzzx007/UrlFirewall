@@ -31,20 +31,25 @@ namespace UrlFirewall.AspNetCore
         //http状态码 默认404
         public HttpStatusCode StatusCode { get; set; } = HttpStatusCode.NotFound;
 
+        //把配置文件中的规则定义进行赋值
         public void SetRuleList(IConfigurationSection section)
         {
+            //未配置，参数异常
             if (section == null)
             {
                 throw new ArgumentException(nameof(section));
             }
 
+            //标准规则列表赋值
             var list = section.Get<List<UrlFirewalllRule>>();
 
+            //未配置，则抛出UrlFIrewall异常
             if (list == null)
             {
                 throw new UrlFirewallException("The section key is invalid.");
             }
 
+            //正则规则列表赋值
             foreach (var t in list)
             {
                 t.Method = t.Method.ToLower();

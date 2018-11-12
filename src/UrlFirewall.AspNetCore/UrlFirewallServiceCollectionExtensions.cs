@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace UrlFirewall.AspNetCore
 {
+    //IServiceCollection扩展方法，进行UrlFirewall服务注入，以及相关服务注入
     public static class UrlFirewallServiceCollectionExtensions
     {
         public static IServiceCollection AddUrlFirewall(this IServiceCollection services, Action<UrlFirewallOptions> options)

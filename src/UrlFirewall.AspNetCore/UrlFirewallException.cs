@@ -2,6 +2,7 @@
 
 namespace UrlFirewall.AspNetCore
 {
+    //定义的UrlFirewallException
     public class UrlFirewallException:Exception
     {
         public UrlFirewallException(string message,Exception innerExcetion):base(message,innerExcetion)
