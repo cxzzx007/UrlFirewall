@@ -14,8 +14,13 @@ namespace UrlFirewall.AspNetCore
             if (options == null)
                 throw new ArgumentNullException(nameof(options));
 
+            //添加针对Options模型的服务
             services.AddOptions();
+
+            //将配置绑定到Options模型上
             services.Configure(options);
+
+            //将UrlFirewall 我们这个服务作为单例注入到DI容器中
             services.AddSingleton<IUrlFirewallValidator, DefaultUrlFirewallValidator>();
 
             return services;
