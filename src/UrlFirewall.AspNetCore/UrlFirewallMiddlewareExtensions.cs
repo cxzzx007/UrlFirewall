@@ -2,7 +2,9 @@
 
 namespace UrlFirewall.AspNetCore
 {
-    //IApplicationBuilder扩展方法 UrlFirewallMiddleware的扩展
+    /// <summary>
+    /// IApplicationBuilder扩展方法，用于添加中间件UrlFirewallMiddleware
+    /// </summary>
     public static class UrlFirewallMiddlewareExtensions
     {
         public static IApplicationBuilder UseUrlFirewall(
